@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Custom report.-->
+<odoo>
+    <data>
+        <report
+                id="custom_report_mic"
+                model="account.invoice"
+                string="Invoice without prices"
+                report_type="qweb-pdf"
+                name="account.report_mic"
+                attachment_use="False"
+                file="account.report_mic"
+        />
+    </data>
+</odoo>

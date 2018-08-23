@@ -1,0 +1,23 @@
+<odoo>
+    <data>
+        <!--<template id="banner_footer" inherit_id="res.partner">-->
+        <!--<div class="footer">-->
+        <!--<img id="banner_footer" src="/mic_report/static/src/img/mic_header.jpg"/>-->
+        <!--</div>-->
+        <!--</template>-->
+
+        <record model="ir.ui.view" id="partner_form">
+            <field name="name">ResPartner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="model">res.partner</field>
+            <field name="arch" type="xml">
+                <group name="purchase" position="after">
+                    <group string="Ventas">
+                        <field name="imagen" widget="image"/>
+                    </group>
+                </group>
+            </field>
+        </record>
+
+    </data>
+</odoo>

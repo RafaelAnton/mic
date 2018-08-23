@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="mic_header" inherit_id="report.external_layout_header">
+        <xpath expr="//div[@class='header']" position="replace">
+            <div class="header">
+                <img id="mic_header" src="/mic_report/static/src/img/mic_header.jpg" width="100%" botton="0"/>
+            </div>
+        </xpath>
+    </template>
+    <template id="mic_footer" inherit_id="report.external_layout_footer">
+        <xpath expr="//div[@class='footer']" position="replace">
+            <div class="footer">
+                <t t-if="o.user_id.partner_id.imagen">
+                    <img t-att-src="'data:image/png;base64,%s' % o.user_id.partner_id.imagen" width="100%"/>
+                </t>
+            </div>
+        </xpath>
+    </template>
+
+    <!--<template id="mic_sale_report" inherit_id="sale.report_saleorder_document">-->
+        <!--<xpath expr="//div[@class='page']" position="inside">-->
+            <!--<img id="mic_footer" src="/mic_report/static/src/img/mic_footer.jpg" style="position:absolute; botton:0"/>-->
+        <!--</xpath>-->
+    <!--</template>-->
+
+</odoo>
