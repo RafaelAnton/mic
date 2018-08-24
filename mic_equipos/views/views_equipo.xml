@@ -1,0 +1,35 @@
+<odoo>
+    <data>
+
+        <record model="ir.ui.view" id="view_equipo_from">
+            <field name="name">mic_equipo</field>
+            <field name="inherit_id" ref="product.product_template_only_form_view"/>
+            <field name="model">product.template</field>
+            <field name="arch" type="xml">
+
+                <notebook position="inside">
+                    <page name="datoaso" string="Datos Asociados" domain="[('tipo_equipo', '=', 'signal')]"
+                               attrs="{'invisible': [('tipo_equipo','!=','equipo')]}">
+                        <field name="caracteristica_ids" widget="one2many_tags"
+                               context="{'default_producto_id': id}">
+                            <tree editable="button">
+                                <field name="producto_id" invisible="1"/>
+                                <field name="caracteristica_id"/>
+                                <field name="numero"/>
+                            </tree>
+                        </field>
+                    </page>
+                </notebook>
+
+
+                <field name="categ_id" position="after">
+                    <field name="tipo_equipo"/>
+                    <field name="signal_ids" widget="many2many_tags" domain="[('tipo_equipo', '=', 'signal')]"
+                           attrs="{'invisible': [('tipo_equipo','!=','equipo')]}"/>
+                </field>
+
+
+            </field>
+        </record>
+    </data>
+</odoo>

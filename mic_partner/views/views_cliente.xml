@@ -1,0 +1,36 @@
+<odoo>
+    <data>
+
+        <record model="ir.ui.view" id="view_mic_from">
+            <field name="name">mic_cliente</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="model">res.partner</field>
+            <field name="arch" type="xml">
+                <field name="category_id" position="after">
+                    <field name="retencion"/>
+                </field>
+
+
+                <notebook position="inside">
+                    <page name="cabecera" string="Cabecera">
+                        <field name="cabecera_ids" context="{'default_partner_id': id}">
+                            <tree editable="button">
+                                <field name="partner_id" invisible="1"/>
+                                <field name="signal_id" domain="[('tipo_equipo','=','signal')]"/>
+                                <field name="cabecera"/>
+                                <field name="equipo_id"
+                                       domain="[('tipo_equipo','=','equipo'),('signal_ids','=',signal_id)]"/>
+                                <field name="estado"/>
+                                <field name="motivo"
+                                       attrs="{'readonly': [('estado','!=','inactivo')], 'required': [('estado','=','inactivo')]}"/>
+                            </tree>
+                        </field>
+                    </page>
+                </notebook>
+
+            </field>
+        </record>
+
+
+    </data>
+</odoo>
