@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="report_mic_doc" inherit_id="report.minimal_layout">
+            <xpath expr="//head" position="inside">
+                <link rel="stylesheet"/>
+            </xpath>
+        </template>
+        <template id="report_mic">
+            <t t-call="report.external_layout">
+                <div class="page">
+                    <section class="rtabla_fondo s_references bg-gray-lighter">
+                        <div class="container">
+                            <div class="row">
+
+                            </div>
+                            <div class="row">
+                                <h1>
+                                    <center>Reporte de Mic</center>
+                                </h1>
+                                <div>
+                                    <img src="" class="img img-responsive" alt="Marca 1"/>
+                                </div>
+
+                            </div>
+                        </div>
+                    </section>
+                    <section>
+                        <table class="table table-condensed">
+                            <tbody>
+                                <tr>
+                                    <td>Producto</td>
+                                </tr>
+                                <tr>
+                                    <td>Descripción</td>
+                                </tr>
+                                <tr>
+                                    <td>Ctdad pedida</td>
+                                </tr>
+                                <tr>
+                                    <td>Precio Unitario</td>
+                                </tr>
+                                <tr>
+                                    <td>Impuestos</td>
+                                </tr>
+                                <tr>
+                                    <td>Subtotal</td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </section>
+                </div>
+            </t>
+        </template>
+        <template id="external_layout_footer">
+            <div class="footer">
+                <div class="text-center" style="border-top: 1px solid black;">
+                    <ul t-if="not company.custom_footer" class="list-inline">
+                        <li t-if="company.phone">E-mail:
+                            <span t-field="company.email"/>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </template>
+        <template id="report_mic1">
+            <t t-call="report.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="mic.report_mic_doc"/>
+                </t>
+            </t>
+        </template>
+        <report
+                string="Imprimir datos de Mic"
+                id="action_report_mic"
+                model="mic.mic1"
+                report_type="qweb-pdf"
+                name="mic.report_mic"
+                file="mic.report_mic"
+        />
+    </data>
+</odoo>
