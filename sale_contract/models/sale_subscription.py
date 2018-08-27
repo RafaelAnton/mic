@@ -36,6 +36,8 @@ class SaleSubscription(models.Model):
     user_id = fields.Many2one('res.users', string='Sales Rep', track_visibility='onchange')
     invoice_count = fields.Integer(compute='_compute_invoice_count')
 
+
+
     @api.model
     def default_get(self, fields):
         defaults = super(SaleSubscription, self).default_get(fields)

@@ -153,12 +153,16 @@
                             <field name="template_id"/>
                             <field name="user_id"/>
                             <field name="company_id" groups="base.group_multi_company"/>
+                            <field name="cabecera_ids" context="{'default_partner_id': id}"/>
                             <field name="currency_id" invisible="1"/>
                             <field name="date_start"/>
                             <field name="date"/>
                             <field name="close_reason_id" attrs="{'invisible': [('state','in',['draft','open','pending'])]}"/>
                         </group>
                     </group>
+
+
+
                     <notebook>
                         <page string="Subscription Lines" id="lines">
                             <div>
