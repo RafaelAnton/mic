@@ -14,16 +14,51 @@
                 <notebook position="inside">
                     <page name="cabecera" string="Cabecera">
                         <field name="cabecera_ids" context="{'default_partner_id': id}">
-                            <tree editable="button">
+                            <tree>
                                 <field name="partner_id" invisible="1"/>
                                 <field name="signal_id" domain="[('tipo_equipo','=','signal')]"/>
+                                <field name="equipo_id" />
+                                <field name="equipo_caracteristica" widget="many2many_tags" />
                                 <field name="cabecera"/>
-                                <field name="equipo_id"
-                                       domain="[('tipo_equipo','=','equipo'),('signal_ids','=',signal_id)]"/>
                                 <field name="estado"/>
                                 <field name="motivo"
                                        attrs="{'readonly': [('estado','!=','inactivo')], 'required': [('estado','=','inactivo')]}"/>
                             </tree>
+                            <form>
+                                <div class="oe-title">
+                                    <h1>
+                                        <field name="signal_id" domain="[('tipo_equipo','=','signal')]"/>
+                                    </h1>
+                                </div>
+                                <group>
+                                    <group>
+                                        <field name="equipo_id"
+                                               domain="[('tipo_equipo','=','equipo'),('signal_ids','=',signal_id)]"/>
+                                        <field name="partner_id" invisible="1"/>
+                                        <field name="cabecera"/>
+                                    </group>
+                                    <group>
+                                        <field name="estado"/>
+                                        <field name="motivo"
+                                               attrs="{'readonly': [('estado','!=','inactivo')], 'required': [('estado','=','inactivo')]}"/>
+                                    </group>
+                                </group>
+
+                                <notebook>
+                                    <page string="Características">
+                                        <field name="equipo_caracteristica" widget="one2many_tags"
+                                               context="{'default_product_id': equipo_id}">
+                                            <tree editable="button">
+                                                <field name="product_id" invisible="1"/>
+                                                <field name="caracteristica_id"/>
+                                                <field name="numero"/>
+                                            </tree>
+                                        </field>
+                                    </page>
+                                </notebook>
+
+                            </form>
+
                         </field>
                     </page>
                 </notebook>

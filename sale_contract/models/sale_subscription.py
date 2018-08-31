@@ -35,6 +35,7 @@ class SaleSubscription(models.Model):
     description = fields.Text()
     user_id = fields.Many2one('res.users', string='Sales Rep', track_visibility='onchange')
     invoice_count = fields.Integer(compute='_compute_invoice_count')
+    cabecera_ids = fields.One2many('mic.cabecera', 'partner_id')
 
 
 

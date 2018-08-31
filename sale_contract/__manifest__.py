@@ -14,7 +14,7 @@ Features:
     - Generate invoice automatically at fixed intervals
 """,
     'author': 'Camptocamp / Odoo',
-    'depends': ['sale'],
+    'depends': ['sale','mic_equipos'],
     'data': [
         'security/sale_subscription_security.xml',
         'security/ir.model.access.csv',

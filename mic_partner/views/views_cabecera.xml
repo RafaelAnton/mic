@@ -6,11 +6,13 @@
             <field name="model">"mic.cabecera</field>
             <field name="arch" type="xml">
                 <tree string="Cabecera" editable="top">
-                    <field name="equipo_id"/>
-                    <field name="partner_id"/>
-                    <field name="cabecera"/>
-                    <field name="estado"/>
-                    <field name="motivo"/>
+                    <field name= "equipo_id"/>
+                    <field name= "partner_id"/>
+
+                    <field></field>
+                    <field name= "cabecera"/>
+                    <field name= "estado"/>
+                    <field name= "motivo"/>
                 </tree>
             </field>
         </record>
