@@ -153,7 +153,6 @@
                             <field name="template_id"/>
                             <field name="user_id"/>
                             <field name="company_id" groups="base.group_multi_company"/>
-                            <field name="cabecera_ids" context="{'default_user_id': id}"/>
                             <field name="currency_id" invisible="1"/>
                             <field name="date_start"/>
                             <field name="date"/>

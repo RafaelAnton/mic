@@ -4,6 +4,7 @@ from odoo import models, fields
 
 class MicPartnerEquipo(models.Model):
     _name = "mic.cabecera"
+    _rec_name = 'signal_id'
 
     signal_id = fields.Many2one('product.product', string=u"Señal", required=True)
     equipo_id = fields.Many2one('product.product', string="Equipo", required=True)
@@ -15,6 +16,4 @@ class MicPartnerEquipo(models.Model):
         [('finaliza', 'Finaliza Contrato'), ('deuda', 'Deuda'), ('equipomal', 'Equipo Malogrado'),
          ('problema', 'Problema Tecnico'), ('solicitud', 'Solicitud Cliente')],
         'Motivo')
-    equipo_caracteristica = fields.One2many('mic.caracteristica.equipos',related="equipo_id.caracteristica_ids")
-
-
+    equipo_caracteristica = fields.One2many('mic.caracteristica.equipos', related="equipo_id.caracteristica_ids")

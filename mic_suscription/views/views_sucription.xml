@@ -1,0 +1,29 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="sucription_form">
+            <field name="name">mic_suscription</field>
+            <field name="inherit_id" ref="sale_contract.sale_subscription_view_form"/>
+            <field name="model">sale.subscription</field>
+            <field name="arch" type="xml">
+                <xpath expr="//group[@name='main']/group[1]/div" position="after">
+                    <field name="cabecera_id" domain="[('partner_id','=',partner_id)]"/>
+                    <field name="cabecera_partner" readonly="1" invisible="1"/>
+                    <field name="cabecera_cabecera" readonly="1"/>
+                    <field name="cabecera_equipo" readonly="1"/>
+                    <field name="cabecera_caracteristicas" readonly="1"/>
+                    <field name="cabecera_estado" readonly="1"/>
+                    <field name="cabecera_motivo" readonly="1"/>
+                </xpath>
+
+                <field name="cabecera_caracteristicas" widget="one2many_tags">
+                    <tree>
+                        <field name="product_id" invisible="1"/>
+                        <field name="caracteristica_id"/>
+                        <field name="numero"/>
+                    </tree>
+                </field>
+
+            </field>
+        </record>
+    </data>
+</odoo>

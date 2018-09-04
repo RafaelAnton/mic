@@ -12,3 +12,5 @@ class EquipoMic(models.Model):
     signal_ids = fields.Many2many('product.product', string='Señal Asignada')
 
     caracteristica_ids = fields.One2many('mic.caracteristica.equipos', 'product_id')
+
+    porcentaje_interes = fields.Float(string='Porcentaje de Interes')
