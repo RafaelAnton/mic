@@ -23,6 +23,12 @@
                     </tree>
                 </field>
 
+                <field name="recurring_total" position="after">
+                    <field name="comision"/>
+
+                </field>
+
+
             </field>
         </record>
     </data>
