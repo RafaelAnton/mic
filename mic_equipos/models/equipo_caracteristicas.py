@@ -7,7 +7,7 @@ class MicEquipoCaracteristicas(models.Model):
 
     product_id = fields.Many2one('product.product', string="Nombre Producto", required=True)
     caracteristica_id = fields.Many2one('mic.caracteristica', string="Nombre de dato Asociado", required=True)
-    numero = fields.Float(string="Numero Serie De Datos Asociado")
+    numero = fields.Char(string="Numero Serie De Datos Asociado")
 
     @api.multi
     def name_get(self):
