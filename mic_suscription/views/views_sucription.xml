@@ -6,7 +6,7 @@
             <field name="model">sale.subscription</field>
             <field name="arch" type="xml">
                 <xpath expr="//group[@name='main']/group[1]/div" position="after">
-                    <field name="cabecera_id" domain="[('partner_id','=',partner_id)]"/>
+                    <field name="cabecera_id" domain="[('partner_id','=',partner_id)]" />
                     <field name="cabecera_partner" readonly="1" invisible="1"/>
                     <field name="cabecera_cabecera" readonly="1"/>
                     <field name="cabecera_equipo" readonly="1"/>
