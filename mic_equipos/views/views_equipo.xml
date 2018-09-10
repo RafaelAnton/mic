@@ -22,7 +22,7 @@
                 </notebook>
 
                 <field name="categ_id" position="after">
-                    <field name="tipo_equipo"/>
+                    <field name="tipo_equipo" />
                     <field name="signal_ids" widget="many2many_tags" domain="[('tipo_equipo', '=', 'signal')]"
                            attrs="{'invisible': [('tipo_equipo','!=','equipo')]}"/>
                     <field name="porcentaje_interes" domain="[('signal', '=', 'tipo_equipo')]"

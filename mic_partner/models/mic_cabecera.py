@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from odoo import models, fields
+from odoo import models, fields,api
 
 
 class MicPartnerEquipo(models.Model):
@@ -17,3 +17,9 @@ class MicPartnerEquipo(models.Model):
          ('problema', 'Problema Tecnico'), ('solicitud', 'Solicitud Cliente')],
         'Motivo')
     equipo_caracteristica = fields.One2many('mic.caracteristica.equipos', related="equipo_id.caracteristica_ids")
+
+    @api.onchange('product.product.signal_ids')
+    def _on_change_signal(self):
+        self.signal_id
+
+

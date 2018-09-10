@@ -17,8 +17,8 @@
                             <tree>
                                 <field name="partner_id" invisible="1"/>
                                 <field name="signal_id" domain="[('tipo_equipo','=','signal')]"/>
-                                <field name="equipo_id" />
-                                <field name="equipo_caracteristica" widget="many2many_tags" />
+                                <field name="equipo_id"/>
+                                <field name="equipo_caracteristica" widget="many2many_tags"/>
                                 <field name="cabecera"/>
                                 <field name="estado"/>
                                 <field name="motivo"
@@ -27,13 +27,18 @@
                             <form>
                                 <div class="oe-title">
                                     <h1>
-                                        <field name="signal_id" domain="[('tipo_equipo','=','signal')]"/>
+                                        <field name="signal_id" domain="[('tipo_equipo','=','signal')]"
+                                               context="{'default_tipo_equipo': 'signal'}"/>
+
                                     </h1>
                                 </div>
                                 <group>
                                     <group>
                                         <field name="equipo_id"
-                                               domain="[('tipo_equipo','=','equipo'),('signal_ids','=',signal_id)]"/>
+                                               domain="[('tipo_equipo','=','equipo'),('signal_ids','=',signal_id)]"
+                                               context="{'default_tipo_equipo': 'equipo','default_signal_ids':signal_id}"
+
+                                        />
                                         <field name="partner_id" invisible="1"/>
                                         <field name="cabecera"/>
                                     </group>
