@@ -14,4 +14,4 @@ class EquipoMic(models.Model):
 
     caracteristica_ids = fields.One2many('mic.caracteristica.equipos', 'product_id')
 
-    porcentaje_interes = fields.Float(string=u'Interes de Comisión')
+    porcentaje_interes = fields.Float(string=u'Porcentaje de Comisión %')

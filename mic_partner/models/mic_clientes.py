@@ -6,5 +6,5 @@ import bs4
 
 class ClienteMic(models.Model):
     _inherit = 'res.partner'
-    retencion = fields.Float('Retencion')
+    retencion = fields.Float('Retencion %')
     cabecera_ids = fields.One2many('mic.cabecera', 'partner_id')

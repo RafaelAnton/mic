@@ -22,7 +22,7 @@
                                 <field name="cabecera"/>
                                 <field name="estado"/>
                                 <field name="motivo"
-g                                       attrs="{'readonly': [('estado','!=','inactivo')], 'required': [('estado','=','inactivo')]}"/>
+                                       attrs="{'readonly': [('estado','!=','inactivo')], 'required': [('estado','=','inactivo')]}"/>
                             </tree>
                             <form>
                                 <div class="oe-title">

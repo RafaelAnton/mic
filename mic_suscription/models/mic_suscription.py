@@ -14,7 +14,7 @@ class SucriptionMic(models.Model):
                                                related="cabecera_id.equipo_caracteristica")
     cabecera_estado = fields.Selection(related="cabecera_id.estado")
     cabecera_motivo = fields.Selection(related="cabecera_id.motivo")
-    comision = fields.Float(computed='compute_comision_sucription', string="Comision", store=True,
+    comision = fields.Float(compute='compute_comision_sucription', string="Comision", store=True,
                             track_visibility='onchange')
 
     @api.onchange('cabecera_id')
@@ -31,7 +31,9 @@ class SucriptionMic(models.Model):
 
     @api.depends('recurring_total')
     def compute_comision_sucription(self):
+
         for suscription in self:
-            comision = ((
-                        suscription.recurring_total - suscription.partner_id.retencion)) * suscription.cabecera_id.signal_id.porcentaje_interes
-            suscription.comision = comision
+            if suscription.recurring_total:
+                comision = ((suscription.recurring_total - ((suscription.partner_id.retencion/100) * suscription.recurring_total)) * (suscription.cabecera_id.signal_id.porcentaje_interes/100))
+
+                suscription.comision = comision
