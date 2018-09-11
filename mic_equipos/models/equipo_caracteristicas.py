@@ -13,6 +13,6 @@ class MicEquipoCaracteristicas(models.Model):
     def name_get(self):
         result = []
         for record in self:
-            name = "%s: %s" % (record.caracteristica_id.caracteristica_nombre, self.numero)
+            name = "%s: %s" % (record.caracteristica_id.caracteristica_nombre, record.numero)
             result.append((record.id, name))
         return result
