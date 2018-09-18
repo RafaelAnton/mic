@@ -27,6 +27,7 @@
         # 'security/ir.model.access.csv',
         'views/views.xml',
         'views/templates.xml',
+        'reports/chochera.xml',
         'reports/sale_report_mic.xml',
         'views/view_partner_form.xml',
     ],

@@ -1,0 +1,11 @@
+<odoo>
+    <data>
+        <template id="chochera_sale_order" inherit_id="sale.report_saleorder_document">
+            <!--<xpath expr="//tr[@class='border-black']" position="replace">-->
+            <!--</xpath>-->
+            <div name="total" position="replace">
+                <span></span>
+            </div>
+        </template>
+    </data>
+</odoo>
