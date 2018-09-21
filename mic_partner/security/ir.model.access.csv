@@ -1,3 +1,2 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_mic_partner_mic_partner,mic_partner.mic_partner,model_mic_partner_mic_partner,,1,0,0,0
 access_mic_partner_mic_cabecera,mic_cabecera,model_mic_cabecera,sales_team.group_sale_salesman_all_leads,1,1,1,1
