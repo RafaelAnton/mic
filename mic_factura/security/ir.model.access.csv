@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_mic_factura_mic_factura,mic_factura.mic_factura,model_mic_factura_mic_factura,,1,0,0,0

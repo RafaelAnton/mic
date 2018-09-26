@@ -1,0 +1,14 @@
+<odoo>
+    <data>
+        <record   model="ir.ui.view" id="view_mic_facturagroup">
+            <field name="name">mic_facturagroup</field>
+            <field name="inherit_id" ref="account.invoice_tree"/>
+            <field name="model">account.invoice</field>
+             <field name="arch" type="xml">
+                <field name="date_due" position="after">
+                    <field name="factura_matriz"/>
+                </field>
+             </field>
+        </record>
+    </data>
+</odoo>

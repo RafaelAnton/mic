@@ -1,10 +1,11 @@
+# coding=utf-8
 from odoo import api, models, fields
-from datetime import datetime
-import requests
-import bs4
 
 
 class ClienteMic(models.Model):
     _inherit = 'res.partner'
-    retencion = fields.Float('Retencion %')
+
+    retencion = fields.Float(u'Retención %')
+    sidsa = fields.Char(u'RTVE NRO CLIENTE')
+    abonado = fields.Boolean(u'Abonado', default=True)
     cabecera_ids = fields.One2many('mic.cabecera', 'partner_id')

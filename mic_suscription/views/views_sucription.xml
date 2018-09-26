@@ -13,7 +13,14 @@
                     <field name="cabecera_caracteristicas" readonly="1"/>
                     <field name="cabecera_estado" readonly="1"/>
                     <field name="cabecera_motivo" readonly="1"/>
+                    <field name="partner_abonado" readonly="1" invisible="1"/>
                 </xpath>
+
+                <field name="date" position="after">
+
+                    <field name="abonado" attrs="{'invisible': [('partner_abonado','!=',False)]}"/>
+
+                </field>
 
                 <field name="cabecera_caracteristicas" widget="one2many_tags">
                     <tree>
@@ -22,6 +29,11 @@
                         <field name="numero"/>
                     </tree>
                 </field>
+
+                <xpath expr="//field[@name='recurring_invoice_line_ids']/tree/field[@name='quantity']" position="after">
+                    <field name="partner_abonado" invisible="1"/>
+                    <field name="abonado" attrs="{'readonly': [('partner_abonado','=',False)]}"/>
+                </xpath>
 
                 <field name="recurring_total" position="after">
                     <field name="comision"/>

@@ -5,6 +5,7 @@ from odoo import api, models, fields
 class SucriptionMic(models.Model):
     _inherit = 'sale.subscription'
 
+    abonado = fields.Float(string=u"Abonado")
     cabecera_id = fields.Many2one('mic.cabecera', string=u"Señal")
     cabecera_partner = fields.Many2one('res.partner', related="cabecera_id.partner_id")
     cabecera_equipo = fields.Many2one('product.product', related="cabecera_id.equipo_id")
@@ -16,6 +17,8 @@ class SucriptionMic(models.Model):
     cabecera_motivo = fields.Selection(related="cabecera_id.motivo")
     comision = fields.Float(compute='compute_comision_sucription', string="Comision", store=True,
                             track_visibility='onchange')
+    partner_abonado=fields.Boolean(related='partner_id.abonado')
+
 
     @api.onchange('cabecera_id')
     def onchange_cabecera_id(self):
@@ -34,6 +37,8 @@ class SucriptionMic(models.Model):
 
         for suscription in self:
             if suscription.recurring_total:
-                comision = ((suscription.recurring_total - ((suscription.partner_id.retencion/100) * suscription.recurring_total)) * (suscription.cabecera_id.signal_id.porcentaje_interes/100))
+                comision = ((suscription.recurring_total - (
+                            (suscription.partner_id.retencion / 100) * suscription.recurring_total)) * (
+                                        suscription.cabecera_id.signal_id.porcentaje_interes / 100))
 
                 suscription.comision = comision
