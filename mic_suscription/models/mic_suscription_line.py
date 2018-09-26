@@ -6,7 +6,7 @@ from odoo import api, models, fields
 
 class SucriptionMic(models.Model):
     _inherit = 'sale.subscription.line'
-    abonado = fields.Float(string=u"Abonado")
+    abonado2 = fields.Float(string=u"Abonado")
     partner_abonado = fields.Boolean(related='analytic_account_id.partner_abonado')
 
     @api.depends('price_unit', 'quantity', 'discount', 'analytic_account_id.pricelist_id', 'abonado')
