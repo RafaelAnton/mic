@@ -32,7 +32,7 @@
 
                 <xpath expr="//field[@name='recurring_invoice_line_ids']/tree/field[@name='quantity']" position="after">
                     <field name="partner_abonado" invisible="1"/>
-                    <field name="abonado2" attrs="{'readonly': [('partner_abonado','=',False)]}"/>
+                    <field name="abonado" attrs="{'readonly': [('partner_abonado','=',False)]}"/>
                 </xpath>
 
                 <field name="recurring_total" position="after">
