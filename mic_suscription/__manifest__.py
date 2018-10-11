@@ -25,7 +25,7 @@
     # always loaded
     'data': [
         # 'security/ir.model.access.csv',
-        'views/views_sucription.xml',
+       # 'views/views_sucription.xml',
 
     ],
     # only loaded in demonstration mode
