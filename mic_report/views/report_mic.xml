@@ -6,6 +6,7 @@
                 <link rel="stylesheet"/>
             </xpath>
         </template>
+
         <template id="report_mic">
             <t t-call="report.external_layout">
                 <div class="page">

@@ -5,9 +5,29 @@
         <xpath expr="//div[@class='header']" position="replace">
             <div class="header">
                 <img id="mic_header" src="/mic_report/static/src/img/mic_header.jpg" width="100%" botton="0"/>
+                <div class="row">
+                    <div class="col-xs-3">
+                        <img t-if="company.logo" t-att-src="'data:image/png;base64,%s' % company.logo"
+                             style="max-height: 45px;"/>
+                    </div>
+                    <div class="col-xs-9 text-right" style="margin-top:20px;" t-field="company.rml_header1"/>
+                </div>
+                <div class="row zero_min_height">
+                    <div class="col-xs-12">
+                        <div style="border-bottom: 1px solid black;"></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-6" name="company_address">
+                        <span t-field="company.partner_id"
+                              t-field-options='{"widget": "contact", "fields": ["address", "name"], "no_marker": true}'
+                              style="border-bottom: 1px solid black; display:inline-block;"/>
+                    </div>
+                </div>
             </div>
         </xpath>
     </template>
+
     <template id="mic_footer" inherit_id="report.external_layout_footer">
         <xpath expr="//div[@class='footer']" position="replace">
             <div class="footer">
@@ -19,9 +39,9 @@
     </template>
 
     <!--<template id="mic_sale_report" inherit_id="sale.report_saleorder_document">-->
-        <!--<xpath expr="//div[@class='page']" position="inside">-->
-            <!--<img id="mic_footer" src="/mic_report/static/src/img/mic_footer.jpg" style="position:absolute; botton:0"/>-->
-        <!--</xpath>-->
+    <!--<xpath expr="//div[@class='page']" position="inside">-->
+    <!--<img id="mic_footer" src="/mic_report/static/src/img/mic_footer.jpg" style="position:absolute; botton:0"/>-->
+    <!--</xpath>-->
     <!--</template>-->
 
 </odoo>
