@@ -27,7 +27,7 @@
         # 'security/ir.model.access.csv',
         'views/views.xml',
         'views/templates.xml',
-        'views/views_mic_facturagruop.xml',
+        #'views/views_mic_facturagruop.xml',
         'views/views_mic_factura.xml',
     ],
     # only loaded in demonstration mode
