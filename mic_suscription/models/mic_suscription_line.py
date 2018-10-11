@@ -1,5 +1,4 @@
 # coding=utf-8
-import dp as dp
 
 from odoo import api, models, fields
 
