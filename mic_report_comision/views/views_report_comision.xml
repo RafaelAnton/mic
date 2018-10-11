@@ -1,0 +1,32 @@
+
+<odoo>
+    <data>
+     <!-- REPORTING/ -->
+        <record model="ir.ui.view" id="view_report_comision">
+            <field name="name">report.comision</field>
+            <field name="model">suscription.comision.report</field>
+            <field name="arch" type="xml">
+                <tree string="Tabla Report Comision " create="false">
+                    <field name="senial"/>
+                    <field name="nombre_Cliente"/>
+                    <field name="numero_de_factura"/>
+                    <field name="fehca_de_factura"/>
+                    <field name="monto"/>
+                    <field name="comision_pocentaje"/>
+                    <field name="monto_de_comision"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="comision_action">
+            <field name="name">Reporte de Comision </field>
+            <field name="res_model">suscription.comision.report</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="view_report_comision"/>
+        </record>
+
+
+        <menuitem id="menu_libro" name="reporte comosion" action="comision_action" parent="account.menu_finance_reports" sequence="10"/>
+    </data>
+</odoo>
