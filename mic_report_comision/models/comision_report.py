@@ -11,6 +11,7 @@ class comision_report(models.Model):
     senial = fields.Char(string=u'Señal')
     nombre_Cliente = fields.Char(string="Cliente")
     numero_de_factura = fields.Char(string="Numero De  Factura")
+    factumatri=fields.Char(string='Factura Matriz')
     fehca_de_factura = fields.Date(string="Fecha de Pago")
     monto = fields.Float(string="Monto de la Factura")
     comision_pocentaje = fields.Float(string=u"Porcentaje de Comisión")
@@ -26,6 +27,7 @@ CREATE OR REPLACE VIEW suscription_comision_report AS
   template2.name as senial,
   resp.name      as nombre_Cliente,
   inv.number     as numero_de_factura,
+  inv.factura_matriz as factumatri,
   inv.date       as fehca_de_factura,
   inv.amount_total as monto,
   template2.porcentaje_interes as comision_pocentaje,

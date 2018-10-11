@@ -10,6 +10,7 @@
                     <field name="senial"/>
                     <field name="nombre_Cliente"/>
                     <field name="numero_de_factura"/>
+                    <field name="factumatri"/>
                     <field name="fehca_de_factura"/>
                     <field name="monto"/>
                     <field name="comision_pocentaje"/>
@@ -26,7 +27,6 @@
             <field name="view_id" ref="view_report_comision"/>
         </record>
 
-
-        <menuitem id="menu_libro" name="reporte comosion" action="comision_action" parent="account.menu_finance_reports" sequence="10"/>
+        <menuitem id="menu_libro" name="reporte comision" action="comision_action" parent="account.menu_finance_reports" sequence="10"/>
     </data>
 </odoo>
