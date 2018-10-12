@@ -1,0 +1,59 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+    <!--
+    <record model="ir.ui.view" id="mic_abonado.list">
+      <field name="name">mic_abonado list</field>
+      <field name="model">mic_abonado.mic_abonado</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="value"/>
+          <field name="value2"/>
+        </tree>
+      </field>
+    </record>
+    -->
+
+    <!-- actions opening views on models -->
+    <!--
+    <record model="ir.actions.act_window" id="mic_abonado.action_window">
+      <field name="name">mic_abonado window</field>
+      <field name="res_model">mic_abonado.mic_abonado</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+    -->
+
+    <!-- server action to the one above -->
+    <!--
+    <record model="ir.actions.server" id="mic_abonado.action_server">
+      <field name="name">mic_abonado server</field>
+      <field name="model_id" ref="model_mic_abonado_mic_abonado"/>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": self._name,
+        }
+      </field>
+    </record>
+    -->
+
+    <!-- Top menu item -->
+    <!--
+    <menuitem name="mic_abonado" id="mic_abonado.menu_root"/>
+    -->
+    <!-- menu categories -->
+    <!--
+    <menuitem name="Menu 1" id="mic_abonado.menu_1" parent="mic_abonado.menu_root"/>
+    <menuitem name="Menu 2" id="mic_abonado.menu_2" parent="mic_abonado.menu_root"/>
+    -->
+    <!-- actions -->
+    <!--
+    <menuitem name="List" id="mic_abonado.menu_1_list" parent="mic_abonado.menu_1"
+              action="mic_abonado.action_window"/>
+    <menuitem name="Server to list" id="mic_abonado" parent="mic_abonado.menu_2"
+              action="mic_abonado.action_server"/>
+    -->
+  </data>
+</odoo>
