@@ -27,7 +27,7 @@
         # 'security/ir.model.access.csv',
         'views/views.xml',
         'views/templates.xml',
-        'views/views_report_comision.xml',
+        #'views/views_report_comision.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
