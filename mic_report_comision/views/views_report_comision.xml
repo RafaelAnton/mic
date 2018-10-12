@@ -8,7 +8,7 @@
             <field name="arch" type="xml">
                 <tree string="Tabla Report Comision " create="false">
                     <field name="senial"/>
-                    <field name="nombre_Cliente"/>
+                    <field name="nombre_cliente"/>
                     <field name="numero_de_factura"/>
                     <field name="factumatri"/>
                     <field name="fehca_de_factura"/>
